@@ -19,7 +19,7 @@ const memeSchema = new mongoose.Schema({
         bottom: String,
         right: String
        },
-        required: [true, 'text is required']
+      
     
     },
     text_two: {
@@ -30,7 +30,7 @@ const memeSchema = new mongoose.Schema({
         bottom: String,
         right: String
        },
-        required: [true, 'text is required']
+        
     
     }
 

@@ -16,13 +16,9 @@ const memeSchema = new mongoose.Schema({
     },
     text_two: {
         type: String
-    }
-
- 
-        
-    
-    
-
+    },
+    color_one: { type: String },
+    color_two: { type: String }
 },{timestamps: true})
 
 

@@ -15,7 +15,8 @@ const express = require("express");
 require('./config/db.connection')
 
 const { memeControllers } = require ('./controllers')
-
+const { imageControllers } =require ('./controllers')
+const { Meme, Image } = require('./models')
 // create application object
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(cors());
 app.use(morgan('dev'));
 
 app.use('/meme', memeControllers);
+app.use('/image', imageControllers)
 app.use((err, req, res, next) => res.status(500).send(err))
 	
 ///////////////////////////////

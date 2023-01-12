@@ -1,3 +1,6 @@
 module.exports = {
-    Meme: require('./Meme')
+    Meme: require('./Meme'),
+
+    Image: require('./Image')
 }
+

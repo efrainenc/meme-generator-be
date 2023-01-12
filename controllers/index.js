@@ -1,3 +1,4 @@
 module.exports = {
-    memeControllers: require('./meme-controller')
+    memeControllers: require('./meme-controller'),
+    imageControllers: require('./image-controller.js')
 }

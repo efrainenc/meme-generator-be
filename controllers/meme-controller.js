@@ -19,7 +19,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) =>{
    try {
-    const createdPerson = await Meme.create(req.body)
+    const createdMeme = await Meme.create(req.body)
     res.status(201).json(createdMeme)
     
    } catch (error) {
@@ -41,7 +41,7 @@ router.get("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
 	try {
-        const deletedMeme = await People.findByIdAndRemove(req.params.id)
+        const deletedMeme = await Meme.findByIdAndRemove(req.params.id)
         res.status(202).json({message:`${deletedMeme}`})
         
     } catch (error) {
@@ -54,7 +54,7 @@ router.delete("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res, next) => {
 	try {
-        const updatedMeme = await People.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        const updatedMeme = await Meme.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.status(201).json(updatedMeme)
     } catch (error) {
         res.status(400).json(error)

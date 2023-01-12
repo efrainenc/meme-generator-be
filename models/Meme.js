@@ -12,28 +12,10 @@ const memeSchema = new mongoose.Schema({
         
     },
 
-    text_one: {
-        type: String,
-       location: {
-        top: String,
-        left: String,
-        bottom: String,
-        right: String
-       },
-      
-    
-    },
-    text_two: {
-        type: String,
-       location: {
-        top: String,
-        left: String,
-        bottom: String,
-        right: String
-       },
+ 
         
     
-    }
+    
 
 },{timestamps: true})
 

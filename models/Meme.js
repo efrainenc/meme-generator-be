@@ -11,6 +11,12 @@ const memeSchema = new mongoose.Schema({
         ref: 'Image'
         
     },
+    text_one:{
+        type:String
+    },
+    text_two: {
+        type: String
+    }
 
  
         

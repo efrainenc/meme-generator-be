@@ -8,8 +8,8 @@ require('../config/db.connection')
 //show all
 router.get('/', async (req, res, next) => {
     try {
-        const people = await People.find({})
-        res.status(200).json(people)
+        const memes = await Meme.find({})
+        res.status(200).json(memes)
     } catch (error) {
         res.status(400).json(error)
         next();
@@ -19,8 +19,8 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) =>{
    try {
-    const createdPerson = await People.create(req.body)
-    res.status(201).json(createdPerson)
+    const createdPerson = await Meme.create(req.body)
+    res.status(201).json(createdMeme)
     
    } catch (error) {
     res.status(400).json(error)
@@ -31,8 +31,8 @@ router.post('/', async (req, res, next) =>{
 
 router.get("/:id", async (req, res) => {
 	try {
-        const person = await People.findById(req.params.id)
-        res.status(200).json(person)
+        const meme = await Meme.findById(req.params.id)
+        res.status(200).json(meme)
     } catch (error) {
         res.status(400).json(error)
         next();
@@ -41,8 +41,8 @@ router.get("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
 	try {
-        const deletedPerson = await People.findByIdAndRemove(req.params.id)
-        res.status(202).json({message:`${deletedPerson}`})
+        const deletedMeme = await People.findByIdAndRemove(req.params.id)
+        res.status(202).json({message:`${deletedMeme}`})
         
     } catch (error) {
         res.status(400).json(error)
@@ -54,8 +54,8 @@ router.delete("/:id", async (req, res) => {
 
 router.put("/:id", async (req, res, next) => {
 	try {
-        const updatedPerson = await People.findByIdAndUpdate(req.params.id, req.body, {new: true})
-        res.status(201).json(updatedPerson)
+        const updatedMeme = await People.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.status(201).json(updatedMeme)
     } catch (error) {
         res.status(400).json(error)
         next();

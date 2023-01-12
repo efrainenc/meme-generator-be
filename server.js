@@ -14,7 +14,7 @@ const morgan = require('morgan');
 const express = require("express");
 require('./config/db.connection')
 
-const { peopleControllers } = require ('./controllers')
+const { memeControllers } = require ('./controllers')
 
 // create application object
 const app = express();
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-app.use('/people', peopleControllers);
+app.use('/meme', memeControllers);
 app.use((err, req, res, next) => res.status(500).send(err))
 	
 ///////////////////////////////
@@ -31,7 +31,7 @@ app.use((err, req, res, next) => res.status(500).send(err))
 ////////////////////////////////
 // create a test route
 app.get("/", (req, res) => {
-    res.send("hello world");
+    res.send("Meme Generator");
 });
 
 ///////////////////////////////

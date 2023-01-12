@@ -29,7 +29,7 @@ router.post('/', async (req, res, next) =>{
 })
 
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req, res, next) => {
 	try {
         const meme = await Meme.findById(req.params.id)
         res.status(200).json(meme)
@@ -39,7 +39,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req, res, next) => {
 	try {
         const deletedMeme = await Meme.findByIdAndRemove(req.params.id)
         res.status(202).json({message:`${deletedMeme}`})

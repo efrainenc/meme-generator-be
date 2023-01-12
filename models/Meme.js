@@ -7,7 +7,8 @@ const memeSchema = new mongoose.Schema({
 
     },
     image:{
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'Image'
         
     },
 
